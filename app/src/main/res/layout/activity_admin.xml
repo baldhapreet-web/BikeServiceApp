@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F7FB">
+
+    <!-- ================= HEADER ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#D32F2F"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:elevation="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Dashboard"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage services and customer activities"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:alpha="0.85"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+
+    <!-- ================= MENU OPTIONS ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Booking Requests -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/requestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="12dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Booking Requests"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Delivery Management -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/deliveryBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="12dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Delivery Management"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Service History -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/historyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="12dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Service History"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Customer Reviews -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reviewBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="12dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Customer Reviews"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Edit Contact -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/contactBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Edit Contact Details"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Logout -->
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Logout"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D32F2F"/>
+
+    </LinearLayout>
+
+</LinearLayout>

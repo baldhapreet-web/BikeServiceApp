@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bike Theme Colors -->
+    <color name="bike_red">#D32F2F</color>
+    <color name="bike_red_dark">#B71C1C</color>
+    <color name="bike_black">#121212</color>
+    <color name="bike_gray">#F5F5F5</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>
