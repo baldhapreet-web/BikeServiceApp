@@ -7,37 +7,41 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    MaterialButton loginBtn, registerBtn;
+    Button loginBtn, registerBtn;
+    String ADMIN_EMAIL = "baldhapreet@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences prefs =
-                getSharedPreferences("APP_PREF", MODE_PRIVATE);
-
+        SharedPreferences prefs = getSharedPreferences("APP_PREF", MODE_PRIVATE);
         boolean firstTime = prefs.getBoolean("FIRST_TIME", true);
 
-        // ✅ Already logged in → go to Menu
-        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
-            startActivity(new Intent(this, MenuActivity.class));
+        // ✅ Check if already logged in
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            if (currentUser.getEmail() != null && currentUser.getEmail().equalsIgnoreCase(ADMIN_EMAIL)) {
+                startActivity(new Intent(this, AdminActivity.class));
+            } else {
+                startActivity(new Intent(this, MenuActivity.class));
+            }
             finish();
             return;
         }
 
-        // ✅ Not first time → skip welcome → go login
-        if(!firstTime){
+        // ✅ Not first time -> skip welcome -> go login
+        if (!firstTime) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
         }
 
-        // FIRST TIME USER → SHOW WELCOME SCREEN
+        // FIRST TIME USER -> SHOW WELCOME SCREEN
         setContentView(R.layout.activity_welcome);
 
         loginBtn = findViewById(R.id.loginBtn);

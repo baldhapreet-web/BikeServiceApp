@@ -1,15 +1,10 @@
 package com.example.bikeserviceapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.content.Intent;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import androidx.activity.EdgeToEdge;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,41 +34,39 @@ public class ViewBookingsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        adapter = new BookingAdapter(this,list);
+        adapter = new BookingAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("bookings");
 
-        String currentUser = auth.getCurrentUser().getUid();
+        if (auth.getCurrentUser() == null) {
+            finish();
+            return;
+        }
+
+        String userId = auth.getCurrentUser().getUid();
 
         ref.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
-
-                String userId = FirebaseAuth.getInstance()
-                        .getCurrentUser().getUid();
-
-                for(DataSnapshot data : snapshot.getChildren()){
-
+                for (DataSnapshot data : snapshot.getChildren()) {
                     Booking booking = data.getValue(Booking.class);
-                    booking.bookingId = data.getKey();
-
-                    // ✅ SHOW ONLY COMPLETED SERVICES
-                    if(booking.userId.equals(userId)
-                            && "Completed".equals(booking.status)){
-
-                        list.add(booking);
+                    if (booking != null) {
+                        booking.bookingId = data.getKey();
+                        // ✅ SHOW ALL USER'S BOOKINGS
+                        if (userId.equals(booking.userId)) {
+                            list.add(booking);
+                        }
                     }
                 }
-
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
     }
 }
