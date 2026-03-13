@@ -38,11 +38,3 @@ A comprehensive Android application built with Java and Firebase to streamline t
 - Firebase Project configured (google-services.json)
 - Minimum SDK: API 24 (Android 7.0)
 
-## 🔧 Setup & Installation
-1. Clone the repository: `git clone <repository-url>`
-2. Open the project in Android Studio.
-3. Connect the app to your Firebase project.
-4. Sync Gradle and run the app on an emulator or physical device.
-
----
-*Developed for efficient bike service management.*
