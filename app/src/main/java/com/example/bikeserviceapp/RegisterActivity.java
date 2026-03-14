@@ -1,17 +1,12 @@
 package com.example.bikeserviceapp;
 
-import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity {
     EditText etEmail, etPassword;
     MaterialButton btnRegister;
+    TextView tvLogin;
     FirebaseAuth auth;
 
     @Override
@@ -29,13 +25,23 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnRegister = findViewById(R.id.btnRegister);
+        tvLogin = findViewById(R.id.tvLogin);
 
         auth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener(v -> {
 
-            String email = etEmail.getText().toString();
-            String password = etPassword.getText().toString();
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
+
+            if (email.isEmpty()) {
+                etEmail.setError("Email required");
+                return;
+            }
+            if (password.isEmpty()) {
+                etPassword.setError("Password required");
+                return;
+            }
 
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
@@ -46,22 +52,24 @@ public class RegisterActivity extends AppCompatActivity {
                                     "Registration Successful! Please Login",
                                     Toast.LENGTH_LONG).show();
 
-                            // SIGN OUT newly created user
                             FirebaseAuth.getInstance().signOut();
 
-                            // GO TO LOGIN SCREEN
-                            Intent intent =
-                                    new Intent(RegisterActivity.this, LoginActivity.class);
-
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
 
                         }else{
                             Toast.makeText(RegisterActivity.this,
-                                    task.getException().getMessage(),
+                                    task.getException() != null ? task.getException().getMessage() : "Registration failed",
                                     Toast.LENGTH_LONG).show();
                         }
                     });
+        });
+
+        tvLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }
