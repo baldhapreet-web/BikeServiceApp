@@ -15,4 +15,22 @@
     <string name="register_subtitle">Join our community for best bike services</string>
     <string name="register_now">Register Now</string>
     <string name="already_have_account">Already have an account? Login</string>
+
+    <!-- Profile Screen -->
+    <string name="my_profile">My Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="bike_details">Bike Details</string>
+    <string name="bike_brand">Bike Brand</string>
+    <string name="bike_model">Bike Model</string>
+    <string name="bike_number">Bike Number</string>
+    <string name="save_profile">Save Profile</string>
+
+    <!-- Booking Screen -->
+    <string name="book_new_service">Book New Service</string>
+    <string name="service_type">Service Type (e.g. Oil Change)</string>
+    <string name="pickup_time">Pickup Date and Time</string>
+    <string name="pickup_address">Pickup Address</string>
+    <string name="book_service">Book Service</string>
 </resources>
