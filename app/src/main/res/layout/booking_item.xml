@@ -1,83 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
-    card_view:cardCornerRadius="14dp"
-    card_view:cardElevation="6dp"
-    card_view:cardUseCompatPadding="true">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <!-- Bike Name (Title) -->
-        <TextView
-            android:id="@+id/tvBike"
-            android:text="Bike Name"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!-- Service Type -->
+            <TextView
+                android:id="@+id/tvBike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/tvStatus"
+                android:text="@string/bike_model"
+                android:textColor="@color/bike_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_launcher_background"
+                android:backgroundTint="#F5F5F5"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="@string/status_pending_upper"
+                android:textColor="@color/bike_red"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/tvService"
-            android:text="Service Type"
-            android:textSize="14sp"
-            android:textColor="#616161"
-            android:layout_marginTop="6dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/general_service"
+            android:textColor="#757575"
+            android:textSize="14sp" />
 
-        <!-- Address -->
-        <TextView
-            android:id="@+id/tvAddress"
-            android:text="Customer Address"
-            android:textSize="14sp"
-            android:textColor="#424242"
-            android:layout_marginTop="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <!-- Status Label -->
-        <TextView
-            android:id="@+id/tvStatus"
-            android:text="Status: Pending"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="#FF5722"
-            android:layout_marginTop="10dp"
-            android:padding="6dp"
-            android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#E0E0E0"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginVertical="16dp"
+            android:background="#F0F0F0" />
 
-        <!-- ADMIN ACTION BUTTON -->
-        <Button
-            android:id="@+id/btnUpdate"
-            android:text="Mark Completed"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:backgroundTint="#4CAF50"
-            android:textColor="@android:color/white"
+        <!-- Pickup Info -->
+        <TextView
+            android:id="@+id/tvPickupTime"
             android:layout_width="match_parent"
-            android:layout_height="48dp"/>
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/scheduled_placeholder"
+            android:textColor="#616161"
+            android:textSize="13sp"
+            app:drawableStartCompat="@android:drawable/ic_menu_my_calendar"
+            app:drawableTint="#9E9E9E" />
+
+        <!-- Address Info -->
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/pickup_from_placeholder"
+            android:textColor="#616161"
+            android:textSize="13sp"
+            app:drawableStartCompat="@android:drawable/ic_dialog_map"
+            app:drawableTint="#9E9E9E" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:text="@string/mark_complete_upper"
+            android:textColor="@color/bike_red"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

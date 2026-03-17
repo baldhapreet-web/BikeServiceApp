@@ -29,8 +29,34 @@
 
     <!-- Booking Screen -->
     <string name="book_new_service">Book New Service</string>
+    <string name="service_history">Service History</string>
     <string name="service_type">Service Type (e.g. Oil Change)</string>
     <string name="pickup_time">Pickup Date and Time</string>
     <string name="pickup_address">Pickup Address</string>
     <string name="book_service">Book Service</string>
+    <string name="no_bookings_yet">No Bookings Yet</string>
+    <string name="no_bookings_subtitle">Your service bookings will appear here.</string>
+
+    <!-- Booking Items -->
+    <string name="status_pending">Pending</string>
+    <string name="status_pending_upper">PENDING</string>
+    <string name="set_delivery">Set Delivery</string>
+    <string name="complete">Complete</string>
+    <string name="mark_complete_upper">MARK COMPLETE</string>
+    <string name="phone_placeholder">+91 9876543210</string>
+    <string name="pickup_placeholder">Pickup: 20 Oct, 10:00 AM</string>
+    <string name="scheduled_placeholder">Scheduled: 24 Oct, 10:00 AM</string>
+    <string name="delivery_placeholder">Delivery: -</string>
+    <string name="pickup_from_placeholder">Pickup from: 123 Main Street, NY</string>
+    <string name="general_service">General Service</string>
+    
+    <!-- Accessibility Descriptions -->
+    <string name="icon_phone_description">Phone Icon</string>
+    <string name="icon_address_description">Address Icon</string>
+    <string name="icon_calendar_description">Calendar Icon</string>
+    <string name="icon_delivery_description">Delivery Icon</string>
+
+    <!-- Placeholders for Adapter -->
+    <string name="label_pickup_from">Pickup from: %1$s</string>
+    <string name="label_scheduled">Scheduled: %1$s</string>
 </resources>
