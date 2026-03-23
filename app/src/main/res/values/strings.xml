@@ -37,6 +37,16 @@
     <string name="no_bookings_yet">No Bookings Yet</string>
     <string name="no_bookings_subtitle">Your service bookings will appear here.</string>
 
+    <!-- Admin Dashboard -->
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="admin_subtitle">Manage services and customer activities</string>
+    <string name="booking_requests">Booking Requests</string>
+    <string name="delivery_mgmt">Delivery Management</string>
+    <string name="service_history_admin">Service History</string>
+    <string name="customer_reviews">Customer Reviews</string>
+    <string name="edit_contact">Edit Contact Details</string>
+    <string name="logout">Logout</string>
+
     <!-- Booking Items -->
     <string name="status_pending">Pending</string>
     <string name="status_pending_upper">PENDING</string>
@@ -55,6 +65,11 @@
     <string name="icon_address_description">Address Icon</string>
     <string name="icon_calendar_description">Calendar Icon</string>
     <string name="icon_delivery_description">Delivery Icon</string>
+    <string name="icon_request_description">Booking Request Icon</string>
+    <string name="icon_history_description">History Icon</string>
+    <string name="icon_review_description">Review Icon</string>
+    <string name="icon_contact_description">Contact Info Icon</string>
+    <string name="icon_next_description">Go to Screen</string>
 
     <!-- Placeholders for Adapter -->
     <string name="label_pickup_from">Pickup from: %1$s</string>
