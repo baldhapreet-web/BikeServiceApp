@@ -47,6 +47,14 @@
     <string name="edit_contact">Edit Contact Details</string>
     <string name="logout">Logout</string>
 
+    <!-- Admin Booking & Delivery Titles -->
+    <string name="booking_request_title">Booking Requests</string>
+    <string name="delivery_mgmt_title">Delivery Orders</string>
+    <string name="no_requests_found">No Requests Found</string>
+    <string name="requests_appear_here">New booking requests will appear here.</string>
+    <string name="no_deliveries_found">No Active Deliveries</string>
+    <string name="deliveries_appear_here">Ongoing delivery orders will appear here.</string>
+
     <!-- Booking Items -->
     <string name="status_pending">Pending</string>
     <string name="status_pending_upper">PENDING</string>
