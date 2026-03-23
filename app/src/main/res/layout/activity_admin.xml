@@ -79,6 +79,7 @@
                         android:background="#FFE082"
                         android:padding="8dp"
                         android:src="@android:drawable/ic_menu_agenda"
+                        android:contentDescription="@string/icon_request_description"
                         app:tint="#FF8F00" />
 
                     <TextView
@@ -95,6 +96,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="@string/icon_next_description"
                         app:tint="#BDBDBD" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -124,6 +126,7 @@
                         android:background="#C5CAE9"
                         android:padding="8dp"
                         android:src="@android:drawable/ic_menu_send"
+                        android:contentDescription="@string/icon_delivery_description"
                         app:tint="#3F51B5" />
 
                     <TextView
@@ -140,6 +143,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="@string/icon_next_description"
                         app:tint="#BDBDBD" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -169,6 +173,7 @@
                         android:background="#C8E6C9"
                         android:padding="8dp"
                         android:src="@android:drawable/ic_menu_recent_history"
+                        android:contentDescription="@string/icon_history_description"
                         app:tint="#388E3C" />
 
                     <TextView
@@ -185,6 +190,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="@string/icon_next_description"
                         app:tint="#BDBDBD" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -214,6 +220,7 @@
                         android:background="#F8BBD0"
                         android:padding="8dp"
                         android:src="@android:drawable/btn_star"
+                        android:contentDescription="@string/icon_review_description"
                         app:tint="#C2185B" />
 
                     <TextView
@@ -230,6 +237,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="@string/icon_next_description"
                         app:tint="#BDBDBD" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -259,6 +267,7 @@
                         android:background="#B3E5FC"
                         android:padding="8dp"
                         android:src="@android:drawable/ic_menu_info_details"
+                        android:contentDescription="@string/icon_contact_description"
                         app:tint="#0288D1" />
 
                     <TextView
@@ -275,6 +284,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="@string/icon_next_description"
                         app:tint="#BDBDBD" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
