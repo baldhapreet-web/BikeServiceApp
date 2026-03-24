@@ -1,70 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
-    card_view:cardCornerRadius="14dp"
-    card_view:cardElevation="5dp"
-    card_view:cardUseCompatPadding="true">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <!-- User Name -->
-        <TextView
-            android:id="@+id/userNameText"
-            android:text="User Name"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="#616161"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <!-- Bike Name (Main Title) -->
-        <TextView
-            android:id="@+id/bikeText"
-            android:text="Bike Model"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#212121"
-            android:layout_marginTop="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <!-- Rating Section -->
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:isIndicator="true"
-            android:numStars="5"
-            android:stepSize="1"
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/userNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name_placeholder"
+                    android:textColor="@color/bike_black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <!-- Divider -->
+                <TextView
+                    android:id="@+id/bikeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/bike_model"
+                    android:textColor="#757575"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/rating_description"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="#FFD600"
+                android:rating="4"
+                android:stepSize="1" />
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#E0E0E0"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginVertical="16dp"
+            android:background="#F0F0F0" />
 
-        <!-- Comment -->
         <TextView
             android:id="@+id/commentText"
-            android:text="Customer feedback comment appears here."
-            android:textSize="14sp"
-            android:textColor="#424242"
-            android:lineSpacingExtra="2dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/customer_feedback_placeholder"
+            android:textColor="#616161"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

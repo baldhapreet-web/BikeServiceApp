@@ -55,6 +55,19 @@
     <string name="no_deliveries_found">No Active Deliveries</string>
     <string name="deliveries_appear_here">Ongoing delivery orders will appear here.</string>
 
+    <!-- Admin History & Reviews -->
+    <string name="service_history_title">Service History</string>
+    <string name="customer_reviews_title">Customer Reviews</string>
+    <string name="no_history_found">No Service History</string>
+    <string name="history_appear_here">Completed services will appear here.</string>
+    <string name="no_reviews_found">No Reviews Yet</string>
+    <string name="reviews_appear_here">Customer feedback will appear here.</string>
+
+    <!-- Review Item -->
+    <string name="user_name_placeholder">User Name</string>
+    <string name="customer_feedback_placeholder">Customer feedback comment appears here.</string>
+    <string name="rating_description">Customer Rating</string>
+
     <!-- Booking Items -->
     <string name="status_pending">Pending</string>
     <string name="status_pending_upper">PENDING</string>
